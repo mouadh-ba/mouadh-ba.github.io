@@ -1,0 +1,85 @@
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Delay utilities */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Intersection Observer animations */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
